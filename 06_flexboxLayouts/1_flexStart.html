@@ -1,0 +1,264 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Flexbox</title>
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Akronim&family=Roboto:ital,wght@0,100;0,400;1,700&display=swap" rel="stylesheet">
+
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- tag to check the device size. Required for media queries -->
+	<!--Do not have to type in - Insert > HTML > Viewport -->
+	
+	
+	<style>
+				
+		body{
+			font-family: 'Roboto', sans-serif;
+			margin: 0;
+			background-color: ivory;
+			font-family: 'Cormorant Garamond', serif;
+		}
+		
+		div p{
+			font-size: 22px;
+			font-weight: bold 600;
+			margin: 12px;
+		}
+		
+		header{
+			background-color: #202020;
+			background-image: url("images/moon.jpg");
+			background-size: cover;
+			/* "background-attachment: fixed;" would position the image in the div*/
+			background-position: center;
+			
+			color:orange;
+			height:50vh; /* viewport height */
+			display: flex; /* a flexbox element */ 
+			align-items: center; /* brings the content to the center, y-axis. "justify-content" for x-axis */
+			padding-left: 64px;
+			
+		}
+		header h1{
+			font-size: 50px;
+			font-family: 'Akronim', cursive;
+		}
+	
+		
+		.flex-container{
+			display: flex;
+			align-items: stretch;
+			
+		}
+		
+		.flex-container div{
+			background-color: #91A878;
+			margin: 10px;
+			padding: 16px;
+		}
+		
+		#item1{
+			flex:25%;
+		}
+		#item1 img{
+			width: 100%; /* img, red cloak, fits in the item1 and does not affect other stuff */
+		}
+		
+		#item2{
+			flex:50%;
+		}
+		#item3{
+			flex:75%;
+		}
+		
+		.btn01{	/* CSS  for the button 01*/
+			background-color:#2A700E;
+			color: ivory;
+			border: none;
+			padding:16px;
+			font-size: 32px;
+		}
+		
+		.btn02{	/* CSS  for the button 02*/
+			background-color:#2A700E;
+			color: ivory;
+			border: none;
+			padding:16px;
+			font-size: 32px;
+		}
+		
+		.btn01:hover{ /* changes states when mouse hovers */
+			background-color: #B1E793;
+			color: #202020;
+			font-weight: bold;
+		}
+		
+		.btn02:hover{ 
+			background-color: orange;
+			font-weight: bold;
+		}
+		
+		
+		#item4{
+			flex:33.333%;
+		}
+		#item5{
+			flex:66.667%;
+		}
+		
+		
+		/* NOW ITS YOUR TURN thing */
+		#item6{
+			flex:25%;
+			background-color: #833131;
+			color: ivory;
+		}
+		#item7{
+			flex:25%;
+			background-color: #933A69;
+			font-size: 25px;
+			color: ivory;
+		}
+		#item8{
+			flex:25%;
+			background-color: #603F7E;
+		}
+		
+		.btn03{
+			background-color:#A181C3;
+			color: ivory;
+			border: none;
+			padding:16px;
+			font-size: 32px;
+		}
+		.btn03:hover{
+			background-color:orange;
+			
+		}
+		
+		.btn04{
+			background-color:#A181C3;
+			color: ivory;
+			border: none;
+			padding:16px;
+			font-size: 32px;
+		}
+		.btn04:hover{
+			background-image: radial-gradient(circle, #e1ae46, #fb9b5c, #ff8b7d, #ff84a1, #ee87c3, #cd94e5, #99a3fa, #4fb1ff, #00c2fb, #00cfdc, #00d5a9, #69d66f);
+			font-weight: bold;
+		}
+		
+		#item9{
+			flex:25%;
+			background-color: #363280;
+		}
+		#item9 img{
+			width: 100%;
+		}
+		
+		
+		/* footer */
+		/* using footer 6 and 8 to make 7 shorter */
+		#item10{
+			flex:25%;
+			background-color: transparent;
+		}
+		#item11{
+			flex:50%;
+			background-color: transparent;
+		}
+		#item12{
+			flex:25%;
+			background-color: transparent;
+		}
+		
+		
+		footer{
+			background-color: #2A700E;
+			padding: 32px 0px 32px 0px;
+			color: ivory;
+			text-align: center;
+			font-weight: bold 700;
+		}
+		
+		
+		
+		@media (max-width: 800px){
+			.flex-container{
+				flex-direction: column; 
+				/* items will turn into a column when the display is 800px or less. Test to see
+				Test "column-reverse" as well*/
+			}
+		}
+		/* media query to change the stle for mobile devices */
+		
+	</style>
+</head>
+
+<body>
+	
+	<header>
+		
+		<h1>SPOOKY TIME</h1>
+	</header>
+	
+	<div class="flex-container">
+		<div id="item1">
+			<img src="images/person.jpg" alt="red cloak">
+		</div>
+		<div id="item2"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quos laborum aliquam recusandae consectetur voluptatem dignissimos molestiae nam, quasi enim odio modi molestias alias debitis a quibusdam autem illo magni repudiandae, praesentium accusantium, iure, eveniet. Provident laboriosam asperiores rerum excepturi mollitia illo quae nemo, enim fugiat voluptatem commodi blanditiis numquam deleniti, eaque placeat voluptas, ad labore repellat itaque laborum harum consequatur, suscipit dolor minus.</p></div>
+		<div id="item3">
+			<p><button class="btn01">Get Some Pumpkins Here!</button></p><br>
+			<p><button class="btn02">SPOOKY!!!!</button></p>
+			<!-- adds a button -->
+		</div>
+	</div> 
+	
+	
+	
+	<div class="flex-container">
+		<div id="item4"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste debitis voluptatum, ipsam obcaecati sequi ea maxime.</p></div>
+		<div id="item5"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, facere perspiciatis odio dignissimos repellendus dolor, ducimus facilis aperiam, quaerat reiciendis nisi adipisci consequatur deserunt dolore eos. Molestiae voluptatum vero, libero sequi nam!</p></div>
+	</div>
+	
+	
+	<div class="flex-container">
+		<div id="item6"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate quisquam eos consectetur cupiditate nulla, reiciendis recusandae. Iure assumenda cupiditate explicabo ducimus rerum dignissimos, velit, sapiente a odit saepe nulla commodi, laborum itaque sed ipsam obcaecati impedit debitis eius fugiat, possimus atque id. Dolore velit minus ab, iure suscipit rerum molestias, placeat. Eveniet, saepe quam, id libero laudantium veniam, beatae voluptatibus aliquam quisquam pariatur veritatis.</p></div>
+		<div id="item7">
+			<p>Snack List</p><br>
+			<ul>
+				<li>Every Flavour Beans</li>
+				<li>Chocolate Frog</li>
+				<li>Puking Pastille</li>
+				<li>Nosebleed Nougat</li>
+				<li>Sherbet Lemon</li>
+			</ul>
+		</div>
+		<div id="item8">
+			<p><button class="btn03">SIGN UP FOR COSTUME CONTEST</button></p>
+			<p><button class="btn04">TRICK OR TREAT</button></p>
+		</div>
+		<div id="item9">
+			<img src="images/blue.jpg" alt="blue window">
+		</div>
+	</div>
+	
+	<footer>
+	<div class="flex-container">
+		<div id="item10"><!-- blank, no content --></div>
+		
+		<div id="item11">
+			<p>Created by Taku Nishimatsu</p><br>
+			<p>&copy; 2021</p> <!-- "&copy;" = copyright. Certain symbols require special codes to be shown. Check https://www.w3schools.com/html/html_entities.asp -->
+		</div>
+	
+		<div id="item12"><!-- blank, no content --></div>
+	</div> 
+	</footer>
+	
+</body>
+</html>
