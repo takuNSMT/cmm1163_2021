@@ -1,0 +1,340 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Bio Page</title>
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Source+Serif+Pro:wght@300;700&display=swap" rel="stylesheet">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+</head>
+
+	
+	<style>/*CSS!!!*/
+	
+		html{
+			background-color:#272727;
+		}
+		
+		body{
+			max-width: 800px;
+			margin: auto;
+			color: #272727;
+		}
+		
+		section{
+			padding: 20px 60px 40px 60px;
+			background-color: ivory;
+		}
+		
+		img{
+			border-radius: 12px;
+		}
+		
+		h2{
+			font-family: 'Source Serif Pro', serif;
+		}
+		
+		p{
+			font-family: 'Source Serif Pro', serif;
+		}
+		
+	
+		
+		.flex-container{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		
+	/*Header*/
+		
+		.header{
+			height:30vh;
+			display: flex;
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+			background-image: url("images/background_edited/niigata_edited_opacity70.png");
+			background-position: center;
+			background-size: cover;
+			color: ivory;
+			font-family: 'Cinzel Decorative', cursive;
+			font-size: 30px;
+			font-weight: lighter;
+		}
+		
+		.header h1{
+			border-top: 1.5px ivory solid;
+			border-bottom: 1.5px ivory solid;
+		}
+
+
+	/*Introduction*/
+		
+		
+		.introduction img{
+			max-width: 250px;
+			border-radius: 125px;
+			margin: 0px 20px 0px 20px;
+		}
+		
+		
+		.introduction .flex-container{
+			flex-wrap: wrap;
+		}
+		
+	
+		#intro01{
+			flex: 50%;
+		}
+
+	
+		
+	
+		
+		
+	/*Education & Experience*/
+		
+		.eduExp{
+			background-image: linear-gradient(to top, #a94658, #c45a4d, #d4753d, #d7952e, #cdb829);
+			color: ivory; 
+		}
+		
+		.eduExp a:link {
+			color: ivory;
+		}
+
+		.eduExp a:visited {
+			color: #E1D16D;
+		}
+		
+	/*Projects*/
+		.projects{
+			margin: auto;
+		}
+		
+		.projects .flex-container{
+			max-width: 1000px;
+			flex-wrap: wrap;
+		}
+		
+		.projects .flex-container img{
+			width: 120px;
+			margin: 6px;
+		}
+
+		
+		.projects .flex-container button{
+			height: 120px;
+			width: 120px;
+			margin: 6px;
+			border-radius: 12px;
+		}
+		
+		
+	/*More About Taku*/
+		
+		.more{
+			background-image: linear-gradient(to bottom, #a94658, #9f3f5a, #94385c, #89335d, #7c2e5e);
+			color: ivory;
+		}
+		
+		.more .flex-container img{
+			height: 150px;
+			width: 150px;
+			margin: 6px;
+			border-radius: 12px;
+			max-width: 1000px;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+		}
+		
+		.more a:link{
+			color: ivory;
+		}
+		
+		.more a:visited{
+			color: #F1DFE0;
+		}
+
+	/*Footer*/
+		
+		footer{
+			padding: 40px 0px 40px 0px;
+			text-align: center;
+			color: ivory;
+		
+		
+	/*Override*/
+		
+		@media (max-width: 650px){
+			.flex-container{
+				flex-direction: column; 
+			}
+		}
+	
+		
+		
+	</style>
+	
+	
+	
+	
+	
+	
+
+<body>
+	
+<!--TITLE-->
+	<header class="header">
+	
+		<h1>Taku Nishimatsu</h1>
+		
+	</header>
+
+	
+<!--MEAT-->
+	
+	<section class="introduction">
+		
+		<h2>INTRODUCTION</h2>
+		
+		<div class="flex-container">
+
+			<div id="introImg01">
+				
+				<img src="images/icons/headshot_icon.png" alt="headshot">
+				
+			</div>
+				
+			<div id="intro01">
+				<p><b>Taku Nishimatsu</b> (he/him) is a first-year student in the Multimedia Production program at Lethbridge College. He is a passionate individual who has taken several event-organizing roles since his time in high school. Taku is currently an elected member of Student Council and Vice Chair of Academic Council at Lethbridge College.</p>
+			</div>
+
+
+		</div>
+		
+	</section>
+	
+	
+	<section class="eduExp">
+		
+		<!--insert photos, make paragraphs shorter in width-->
+		
+		<h2>EDUCATION &#38; EXPERIENCE</h2>
+		
+		<div class="flex-container">
+			
+			
+			<div id="eduExp01">
+			
+				<p>Taku began attending Lethbridge College in 2013 and obtained a diploma in General Studies in 2015. Despite the language barrier, he was elected to be part of Student Council in his second year. He was also awarded Academic Honours and was named a Featured Convocate for his academic achievement and community involvement upon completion of his program. Between 2015 and 2018, Taku volunteered and had a few positions in English Language Centre, the ESL department at Lethbridge College, where he mainly focused on supporting international students, immigrants, and other newcomers to Canada.</p>
+
+				<p>Taku plans to study both multimedia and architecture for the next few years, and he has exercised his artistic skills through hobbies and work. At an early age, he built houses, automobiles, spaceships out of toy blocks and designed his own holiday cards on Microsoft Paint to entertain his families and friends. For the past several years, he has designed posters, certificates, and other types of creative documents at work. He enjoys building cities and other living spaces in video games. One of his dreams is to design and build a <a href="https://www.youtube.com/user/livingbigtinyhouse" target="_blank">tiny home on wheels</a> for his partner and himself, and his ideas are influenced by the simplicity and aesthetics of the <a href="https://en.wikipedia.org/wiki/Chashitsu" target="_blank"> traditional Japanese tea houses</a>.</p>
+	
+			</div>
+
+		</div>
+		
+	</section>
+	
+	
+	
+	<section class="projects">
+	
+		<h2>PROJECTS<!--Past & Present--></h2>
+		
+			<div class="flex-container">				
+				
+				<img src="images/icons/swDrawing_icon.png" alt="SW drawing">
+			
+				<img src="images/icons/silver_sketch_icon.png" alt="Silver Sketch">
+	
+				<img src="images/icons/silver_icon.png" alt="Silver">
+				
+				<img src="images/icons/treeSketch_icon.png" alt="trees">
+				
+				<img src="images/icons/vectorIllustration_icon.png" alt="Vector Illustration">
+
+			
+				<button id="btn06" onclick="06">Site Contstruction</button>
+				<!--FIX: why top margin?-->
+
+				<button id="btn07" onclick="07">Basic Interaction</button>
+
+				<button id="btn08" onclick="08">Object Properties</button>
+		
+				
+			</div>
+		
+		<div id="prjButtons">
+			
+		</div>
+
+
+
+	</section>
+	
+	
+	
+	<section class="more">
+		
+		<h2>MORE ABOUT TAKU</h2>
+		
+		
+
+		<!--note: insert photos, maybe reduce writing?-->
+			
+		<div id="more01">
+
+			<p>Taku was born in <a href="https://www.google.com/maps/place/Gunma,+Japan/@36.5207156,138.472964,9z/data=!3m1!4b1!4m5!3m4!1s0x601e6085c836ae59:0xd799356889717292!8m2!3d36.5605388!4d138.8799972" target="_blank">Gunma, Japan</a> and moved to Tokyo with his family when he was 9. He has 2 siblings and is the middle child. Taku is mostly shy and anxious but can be goofy at times, and he enjoys witty jokes and dry humour. He grew up watching superheroes on TV but realized he was not very athletic. Inspired by the stories of Thomas Edison, he decided to become an inventor at an early age. Taku first came to southern Alberta as an international student in 2013 and immediately fell in love with the people, culture, and nature. He has moved back and forth between Tokyo and southern Alberta several times.</p>
+
+			<p>Cooking and eating food are Taku’s favourite ways of keeping his mind occupied. Although his skills are only adequate, he spends a lot of his free time in the kitchen and enjoys trying a wide variety of meals and recipes. He has recently obtained his <a href="https://www.tasteatlas.com/nerikiri" target="_blank">Nerikiri</a> Art Instructor certificate, and plans on practicing more in his downtime. Taku likes to have his favourite music and movies on while being in the kitchen such as ABBA, Queen, <a href="https://open.spotify.com/artist/7dZHl3ZmH21XpCwvcMlnml" target="_blank">the ‘90s J-pop</a>, The Shawshank Redemption, etc. </p>
+
+		</div>	
+			
+		
+		<div class="flex-container">	
+			
+			<div class="moreImg">
+			
+				<img src="images/icons/food04_icon.png" alt="Soba">
+				
+				<img src="images/icons/food02_icon.png" alt="fish">
+				
+				<img src="images/icons/nerikiri01_icon.png" alt="Nerikiri Summer">
+				
+				<img src="images/icons/magazines_icon.png" alt="Magazines">
+			
+			</div>
+		
+		</div>
+
+		
+	</section>
+	
+	<footer>
+	
+		<div class="flex-container">
+			
+			<div id="footer">
+		
+				<p>Created by <b>Taku Nishimatsu</b></p>
+				<p>&copy; 2021</p>
+				
+			</div>
+	
+		</div>
+	
+	</footer>
+
+</body>
+	
+	
+
+</html>
