@@ -1,0 +1,168 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Titillium+Web&display=swap');
+
+
+html{
+	background-color: #202020;
+}
+
+body{
+	max-width: 1080px;
+	margin: auto;
+	background: #252525;
+}
+
+header{
+	height: 16vh;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	padding: 1% 4% 1% 4%;
+	background-color: #5C9DD5;
+	color: white;
+	font-family: 'Merienda', cursive;
+	position: -webkit-sticky;
+ 	position: sticky;
+ 	top: 0;
+}
+
+section{
+}
+
+img{
+	max-width: 92%;
+	padding: 2%;
+}
+
+h2{
+	color: white;
+	font-family: 'Merienda', cursive;
+	font-size: 200%;
+}
+
+p{
+	color: #D5D5D5;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+footer{
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	background-color: #202020;
+	color: ivory;
+	padding: 32px 0 32px 0;
+}
+
+/*-----------------------------------------------------*/
+
+.flexContainer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*Links at the top*/
+/*.linksTop .flexContainer{
+	background-color: #C28182;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.linksTop a{
+	padding: 2.5% 3% 2.5% 3%;
+	text-decoration: none;
+	font-size: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	color: ivory;
+}
+
+.linksTop a:hover{
+	color: ivory;
+	background-color: brown;
+}
+
+.linksTop a:visited{
+	color: ivory;
+}*/
+
+
+/*NAV_LINKS*/
+.linksTop ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0% 10% 0% 10%;
+	overflow: hidden;
+	background-color: #0E3371;
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 120%;
+}
+
+.linksTop li{
+	width: 120px;
+	float: left;
+	padding: 0 4px 0 4px;
+}
+
+.linksTop li a:link, .linksTop li a:visited {
+	display: block;
+	text-align: center;
+	padding: 25% 0 25% 0;
+	text-decoration: none;
+	color: ivory;
+}
+
+.linksTop li a:hover {
+	background-color: #20509E;
+	display: block;
+	color: ivory;
+}
+
+
+/*CONTENT*/
+.content{
+	text-align: justify;
+	padding: 1% 8% 1% 8%;
+}
+
+.content img{
+}
+
+#opposite{
+}
+
+/*FOOTER*/
+
+#backToTop{
+	background-color: #0E3371;
+	color: ivory;
+	font-size: 20px;
+	border-radius: 10px;
+	padding: 16px;
+	border: thin;
+}
+
+#backToTop:hover {
+	background-color: #20509E;
+}
+
+footer .flexContainer{
+	display: block;
+}
+
+/*media*/
+@media (max-width: 720px){
+	.flexContainer{
+		flex-direction: column; 
+	}
+}
+	
+
