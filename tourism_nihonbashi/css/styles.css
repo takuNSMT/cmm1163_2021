@@ -10,7 +10,7 @@ html{
 }
 
 body{
-	max-width: 1080px;
+	max-width: 1280px;
 	margin: auto;
 	background: #252525;
 }
@@ -22,31 +22,45 @@ header{
 	justify-content: center;
 	align-items: center;
 	padding: 1% 4% 1% 4%;
-	background-color: #5C9DD5;
-	color: white;
+	background-color: #131039; /*keep this*/
+	color: ghostwhite;
 	font-family: 'Merienda', cursive;
+	font-size: 250%;
+	
+	background-image: url("../images/background/nihombashi_tokaido_02_resized_opacity70.png");
+	background-position: center;
+	background-size: cover;
+	
 	position: -webkit-sticky;
  	position: sticky;
  	top: 0;
+}
+
+.smallCaps{
+	font-variant: small-caps;
+}
+
+h2{
+	color: ghostwhite;
+	font-family: 'Merienda', cursive;
+	font-size: 300%;
+	margin: 5% 0 -2% 0;
 }
 
 section{
 }
 
 img{
+	min-width: 38%;
 	max-width: 92%;
 	padding: 2%;
 }
 
-h2{
-	color: white;
-	font-family: 'Merienda', cursive;
-	font-size: 200%;
-}
 
 p{
 	color: #D5D5D5;
 	font-family: 'Titillium Web', sans-serif;
+	font-size: 20px;
 }
 
 footer{
@@ -54,11 +68,11 @@ footer{
 	justify-content: center;
 	align-items: center;
 	background-color: #202020;
-	color: ivory;
+	color: #D5D5D5;
 	padding: 32px 0 32px 0;
 }
 
-/*-----------------------------------------------------*/
+/*-----------------flexContainer-------------------*/
 
 .flexContainer{
 	display: flex;
@@ -67,38 +81,42 @@ footer{
 }
 
 /*Links at the top*/
-/*.linksTop .flexContainer{
-	background-color: #C28182;
-	text-align: center;
-	justify-content: center;
-	align-items: center;
+.linksTop{
 	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	background-color: #28245D;
 	flex-wrap: wrap;
+	padding: 0 6% 0 6%;
 }
 
 .linksTop a{
-	padding: 2.5% 3% 2.5% 3%;
+	padding: 3% 2.5% 3% 2.5%;
+	margin: .5% 1% .5% 1%;
 	text-decoration: none;
-	font-size: 20px;
-	display: flex;
-	flex-wrap: wrap;
-	color: ivory;
+	font-size:20px;
+	font-family: 'Titillium Web', sans-serif;
+	color: ghostwhite;
 }
 
 .linksTop a:hover{
-	color: ivory;
-	background-color: brown;
+	color: ghostwhite;
+	background-color: #20509E;
 }
 
 .linksTop a:visited{
-	color: ivory;
-}*/
+	color: #D5D5D5;
+}
 
 
-/*NAV_LINKS*/
+/*------------NAV_LINKS------------*/
+/*.linksTop nav{
+	flex: 100%;
+}
+
 .linksTop ul{
 	list-style-type: none;
-	margin: 0;
 	padding: 0% 10% 0% 10%;
 	overflow: hidden;
 	background-color: #0E3371;
@@ -109,7 +127,7 @@ footer{
 .linksTop li{
 	width: 120px;
 	float: left;
-	padding: 0 4px 0 4px;
+	padding: 0 1% 0 1%;
 }
 
 .linksTop li a:link, .linksTop li a:visited {
@@ -117,14 +135,14 @@ footer{
 	text-align: center;
 	padding: 25% 0 25% 0;
 	text-decoration: none;
-	color: ivory;
+	color: #D5D5D5;
 }
 
 .linksTop li a:hover {
 	background-color: #20509E;
 	display: block;
-	color: ivory;
-}
+	color: #D5D5D5;
+}*/
 
 
 /*CONTENT*/
@@ -134,16 +152,21 @@ footer{
 }
 
 .content img{
+	margin: 3% 0 3% 0;
 }
 
-#opposite{
+.flexReverse{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /*FOOTER*/
 
 #backToTop{
-	background-color: #0E3371;
-	color: ivory;
+	background-color: #28245D;
+	color: ghostwhite;
+	font-family: 'Titillium Web', sans-serif;
 	font-size: 20px;
 	border-radius: 10px;
 	padding: 16px;
@@ -159,9 +182,30 @@ footer .flexContainer{
 }
 
 /*media*/
-@media (max-width: 720px){
+@media (max-width: 960px){
+	h1{
+		font-size: 40px; 
+		line-height: 72%;
+	}
+	
+	h2{
+		font-size: 220%;
+	}
+	
+	p{
+		font-size: 18px;
+	}
+	
+	.linksTop{
+		flex-direction: wrap; 
+	}
+	
 	.flexContainer{
-		flex-direction: column; 
+		flex-direction: column;
+	}
+	
+	.flexReverse{
+		flex-direction: column-reverse; 
 	}
 }
 	
