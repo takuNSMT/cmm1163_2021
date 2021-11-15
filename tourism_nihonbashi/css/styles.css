@@ -47,8 +47,6 @@ h2{
 	margin: 5% 0 -2% 0;
 }
 
-section{
-}
 
 img{
 	min-width: 38%;
@@ -80,38 +78,8 @@ footer{
 	align-items: center;
 }
 
-/*Links at the top*/
-.linksTop{
-	display: flex;
-	justify-content: center;
-	text-align: center;
-	align-items: center;
-	background-color: #28245D;
-	flex-wrap: wrap;
-	padding: 0 6% 0 6%;
-}
-
-.linksTop a{
-	padding: 3% 2.5% 3% 2.5%;
-	margin: .5% 1% .5% 1%;
-	text-decoration: none;
-	font-size:20px;
-	font-family: 'Titillium Web', sans-serif;
-	color: ghostwhite;
-}
-
-.linksTop a:hover{
-	color: ghostwhite;
-	background-color: #20509E;
-}
-
-.linksTop a:visited{
-	color: #D5D5D5;
-}
-
-
 /*------------NAV_LINKS------------*/
-/*.linksTop nav{
+.linksTop nav{
 	flex: 100%;
 }
 
@@ -119,15 +87,15 @@ footer{
 	list-style-type: none;
 	padding: 0% 10% 0% 10%;
 	overflow: hidden;
-	background-color: #0E3371;
+	background-color: #28245D;
 	font-family: 'Titillium Web', sans-serif;
-	font-size: 120%;
+	font-size: 140%;
 }
 
 .linksTop li{
 	width: 120px;
 	float: left;
-	padding: 0 1% 0 1%;
+	padding-right: 4%;
 }
 
 .linksTop li a:link, .linksTop li a:visited {
@@ -135,14 +103,14 @@ footer{
 	text-align: center;
 	padding: 25% 0 25% 0;
 	text-decoration: none;
-	color: #D5D5D5;
+	color: ghostwhite;
 }
 
 .linksTop li a:hover {
 	background-color: #20509E;
 	display: block;
-	color: #D5D5D5;
-}*/
+	color: ghostwhite;
+}
 
 
 /*CONTENT*/
@@ -160,6 +128,38 @@ footer{
 	justify-content: center;
 	align-items: center;
 }
+
+
+/*TABLES*/
+
+table{
+	font-family: 'Titillium Web', sans-serif;
+	color: ghostwhite;
+	font-size: 20px;
+	border-collapse: collapse;
+	margin: 3%;
+}
+
+th, th{
+	border: 1px solid #565656;
+	padding: 7px;
+	background-color: #28245D; 
+}
+
+tr td{
+	padding: 7px;
+	border: 1px solid #565656;
+}
+
+tr a{
+	padding: 7px;
+	color: ghostwhite;
+}
+
+tr a:hover{
+	background-color: #20509E;
+}
+
 
 /*FOOTER*/
 
@@ -196,8 +196,32 @@ footer .flexContainer{
 		font-size: 18px;
 	}
 	
-	.linksTop{
-		flex-direction: wrap; 
+	.linksTop ul{
+	list-style-type: none;
+	padding: 0 10% 1% 10%;
+	overflow: hidden;
+	background-color: #28245D;
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 100%;
+	}
+
+	.linksTop li{
+		width: 120px;
+		float: left;
+		padding-right: 2%;
+	}
+
+	.linksTop li a:link, .linksTop li a:visited {
+		display: block;
+		text-align: center;
+		padding: 6% 0 6% 0;
+		text-decoration: none;
+		color: ghostwhite;
+	}
+	
+	table{
+		font-size: 100%;
+		text-align: left;
 	}
 	
 	.flexContainer{
