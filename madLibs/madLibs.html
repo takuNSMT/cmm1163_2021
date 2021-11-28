@@ -1,0 +1,597 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>MadLibs!!</title>
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Outfit&display=swap" rel="stylesheet">
+	<style>
+		
+		html{
+			background-color: #2A2A2A;
+		}
+		
+		body{
+			padding: 2%;
+			margin: auto;
+			max-width: 1280px;
+			
+			background-image: linear-gradient(to right top, #088e6d, #008c99, #0085b4, #6077b5, #94689c);
+			color: ghostwhite;
+			font-family: 'Outfit', sans-serif;
+		}
+		
+		button{
+			float: right;
+			padding: 20px;
+		}
+		
+		h1{
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+			margin:30px auto ;
+			max-width: 500px;
+			font-size: 120px;
+			font-family: 'Nanum Pen Script', cursive;
+		}
+		
+		.rules{
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+			margin: auto;
+			max-width: 680px;
+			padding-bottom: 50px;
+			font-size: 20px;
+		}
+		
+		.lblElement{
+			padding: 5px 3%;
+			font-size: 20px;
+		}
+		
+		
+		input{
+			width:120px;
+			text-align: center;
+			font-size: 20px;
+			font-weight: 600;
+			align-items: center;
+			justify-content: center;
+			font-family: 'Nanum Pen Script', cursive;
+		}
+		
+		
+		input[type="radio"]{
+			width: auto;
+		}
+	
+		input[type="submit"]{
+			font-family: 'Outfit', sans-serif;
+			text-align: center;
+			width:300px;
+			height: 50px;
+			border-radius: 12px;
+			border: solid 3px #2A2A2A;
+		}
+		
+		
+		select{
+			height: 25px;
+			font-size: 20px;
+			width: auto;
+			font-family: 'Nanum Pen Script', cursive;
+			font-weight: 600;
+			text-align: center;
+		}
+		
+		
+		option{
+			height: 25px;
+			font-size: 20px;
+			font-family: 'Outfit', sans-serif;
+		}
+		
+		#output{
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+			padding: 3% 10%;
+			margin: 0 100px;
+			background-color:ghostwhite;
+			border-radius: 50px 50px 0 0;
+			font-size: 20px;
+			line-height: 150%;
+			text-align: justify;
+			color: #2A2A2A;
+		}
+		
+		img{
+			height:200px;
+			padding: 0 3%;
+		}
+		
+		#images{
+			display: flex;
+			justify-content: center;
+			margin: 0 100px;
+			padding-bottom: 6%;
+			background-color:ghostwhite;
+			border-radius: 0 0 50px 50px;
+		}
+		
+		.flexContainer{
+			flex-wrap: wrap;
+			display: flex;
+		}
+		
+		#submitButton{
+			text-align: center;
+			margin-bottom: 5%;
+		}
+		
+		#footer{
+			margin:50px;
+			text-align: center;
+				
+		}
+		
+	</style>
+	
+	
+</head>
+
+<body>
+	
+	<!--<button onClick="test();">Test</button>-->
+	
+	<h1>Mad Libs!!</h1>
+	
+	<p class="rules">Fill out the questions and click "Generate a story" at the bottom! Hint: An adverb modifies an adjective or verb, and usually ends in an "ly". 
+		Examples: happily, fast, dangerously</p>
+	
+	<!--
+
+		<label for="">:</label>
+		<input type="" id="" name=""><br>-->
+	
+	<form action="javascript:myStory();">
+	<!--1st paragraph-->
+		
+		<div class="flexContainer">
+		
+			<p class="lblElement">		
+				<label for="num01">Number:</label>
+				<input type="number" id="num01" name="num01" required autofocus><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="geo01">Planet:</label>
+				<input type="text" id="geo01" name="geo01"><br>
+			</p>
+
+
+		<!--2nd paragraph-->
+			<p class="lblElement">
+				<label for="geo02">Town or city:</label>
+				<input type="text" id="geo02" name="geo02"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="sib01">Person's name:</label>
+				<input type="text" id="sib01" name="sib01"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="tv01">Your favourite tv genre:</label>
+				<select id="tv01" name="tv01">
+					<option value="blank"></option>
+					<option value="late night shows">late night shows</option>
+					<option value="true crime shows">true crime shows</option>
+					<option value="quiz shows">quiz shows</option>
+					<option value="survival shows">survival shows</option>
+					<option value="infomercials">infomercials</option>
+					<option value="courtroom dramas">courtroom dramas</option>
+					<option value="cooking shows">cooking shows</option>
+				</select> <br>
+			</p>
+
+			<p class="lblElement">
+				<label for="event01">Historic event:</label>
+				<input type="text" id="event01" name="event01"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="animal01">Animals (plural):</label>
+				<input type="text" id="animal01" name="animal01"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="sib02">Choose one:</label>
+				<input type="radio" name="sib02" value="Amber">Amber <!--#FFBF00-->
+				<input type="radio" name="sib02" value="Violet">Violet <!--#8F00FF-->
+				<input type="radio" name="sib02" value="Brick">Brick<br> <!--brick-->
+			</p>
+
+			<p class="lblElement">
+				<label for="age01">Number:</label>
+				<input type="number" id="age01" name="age01"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="ent01">Type of entertainment:</label>
+				<input type="text" id="ent01" name="ent01"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="media01">Type of paper media:</label>
+				<input type="text" id="media01" name="media01"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="ppl01">Group of people:</label>
+				<input type="text" id="ppl01" name="ppl01"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="limb01">Body part:</label>
+				<input type="text" id="limb01" name="limb01"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="sib03">Choose one:</label>
+				<input type="radio" name="sib03" value="Rose">Rose
+				<input type="radio" name="sib03" value="Lily">Lily
+				<input type="radio" name="sib03" value="Lavender">Lavender<br>
+			</p>
+
+
+		<!--3rd paragpraph-->
+			<p class="lblElement">
+				<label for="bis01">Restaurant chain (plural):</label>
+				<input type="text" id="bis01" name="bis01"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="job01">Occupation:</label>
+				<input type="text" id="job01" name="job01"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="bis02">Retail store:</label>
+				<input type="text" id="bis02" name="bis02"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="money01">Fictional currency:</label>
+				<input type="text" id="money01" name="money01"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="job02">Another occupation:</label>
+				<input type="text" id="job02" name="job02"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="geo03">Large city:</label>
+				<input type="text" id="geo03" name="geo03"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="adv01">Adverb:</label>
+				<input type="text" id="adv01" name="adv01"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="time01">Duration of time:</label>
+				<input type="text" id="time01" name="time01"><br>
+			</p>
+
+
+		<!--4th paragraph-->
+			<p class="lblElement">
+				<label for="obj01">Important thing/item:</label>
+				<input type="text" id="obj01" name="obj01"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="cloth01">Piece of clothing:</label>
+				<input type="text" id="cloth01" name="cloth01"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="furniture01">Piece of furniture:</label>
+				<input type="text" id="furniture01" name="furniture01"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="food01">Type of protein:</label>
+				<input type="text" id="food01" name="food01"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="obj02">Small object:</label>
+				<input type="text" id="obj02" name="obj02"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="cont01">Type of container:</label>
+				<input type="text" id="cont01" name="cont01"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="liq01">Liquid:</label>
+				<input type="text" id="liq01" name="liq01"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="animal02">Mythical creatures (plural):</label>
+				<input type="text" id="animal02" name="animal02"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="geo04">Unpleasant location:</label>
+				<input type="text" id="geo04" name="geo04"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="num02">Number:</label>
+				<input type="number" id="num02" name="num02"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="adv02">Adverb:</label>
+				<input type="text" id="adv02" name="adv02"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="verb01">Choose one:</label>
+				<input type="radio" name="verb01" value="boiled">boiled
+				<input type="radio" name="verb01" value="marinated">marinated
+				<input type="radio" name="verb01" value="sliced">sliced<br>
+			</p>
+
+
+		<!--5th paragraph-->
+			<p class="lblElement">
+				<label for="time02">Duration of time:</label>
+				<input type="text" id="time02" name="time02"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="member">Number:</label>
+				<input type="number" id="member" name="member"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="money02"># of coins in your wallet:</label>
+				<input type="number" id="money02" name="money02"><br>
+			</p>
+
+
+		<!--6th paragraph-->
+			<p class="lblElement">
+				<label for="time03">Duration of time:</label>
+				<input type="text" id="time03" name="time03"><br>
+			</p>
+
+			<p class="lblElement">
+				<label for="toy01">Your favourite childhood toy:</label>
+				<input type="text" id="toy01" name="toy01"><br>
+			</p>
+		
+		</div>
+		
+		<!--submit button-->
+		<p id="submitButton">
+			<input type="submit" value="Generate a story">
+		</p>
+
+	</form>
+	
+	<div id="output"></div>
+	
+	<!--image swap test-->
+	<!--<img src="images/sampleImg-01.png" alt="Sample" id="img_sample">-->
+	
+	<div class="flexContainer" id="images">
+		<img src="images/questionMark.png" alt="Q mark">
+	</div>
+	
+	<footer>
+		<div id="footer">
+
+			<p>Created by <b>Taku Nishimatsu</b></p>
+			<p>&copy; 2021</p>
+
+		</div>
+	</footer>
+	
+	
+<!------------JavaScript----------->	
+	<script>
+	
+		function myStory(){
+			
+/**************var + result*********/
+			
+			/*
+			var  = document.getElementById('').value;
+			var  = document.getElementById('').value;
+			
+			console.log("var for X paragraph");
+			
+			document.getElementById('output').innerHTML+= "<br>";
+			
+			console.log("X paragraph completed");
+			*/
+			
+		//1st paragraph
+			var num01 = document.getElementById('num01').value;
+			var geo01 = document.getElementById('geo01').value;
+			
+			console.log("var for 1st paragraph");
+			
+			document.getElementById('output').innerHTML= "<p>Alex is the world’s number "+num01+" magician and runs a family business. Alex and their team travel across "+geo01+" and perform their original shows to entertain their audience in various ways.</p><br>";
+			
+			console.log("1st paragraph completed");
+			
+			
+		//2nd paragraph
+			var geo02 = document.getElementById('geo02').value;
+			var event01 = document.getElementById('event01').value;
+			var animal01 = document.getElementById('animal01').value;
+			var tv01 = document.getElementById('tv01').value;
+			var sib01 = document.getElementById('sib01').value;
+			/*var sib02 = document.getElementById('sib02').value;
+			var sib03 = document.getElementById('sib03').value;
+			var sib01 = document.querySelector('input[name="sib01"]:checked').value;*/
+			var sib02 = document.querySelector('input[name="sib02"]:checked').value;
+			var sib03 = document.querySelector('input[name="sib03"]:checked').value;
+			var age01 = document.getElementById('age01').value;
+			var ent01 = document.getElementById('ent01').value;
+			var media01 = document.getElementById('media01').value;
+			var ppl01 = document.getElementById('ppl01').value;
+			var limb01 = document.getElementById('limb01').value;
+			
+			console.log("var for 2nd paragraph");
+			
+			document.getElementById('output').innerHTML+= "<p>Alex was born in "+geo02+" during "+event01+" and was brought up by 2 loving "+animal01+". They grew up filming home-made "+tv01+" with their 3 siblings, "+sib01+", "+sib02+", and "+sib03+", and decided to become a magician and entertain people at the age of "+age01+". Alex learned the basic tricks and skills by watching "+ent01+" and reading "+media01+" written by famous magicians. Alex performed in front of their family and "+ppl01+", and they started to make their own tricks as they gained experience. Vanishing their "+limb01+" has always been their favourite trick.</p><br>";
+			
+			console.log("2nd paragraph completed");
+			
+			
+		//3rd paragraph
+			var bis01 = document.getElementById('bis01').value;
+			var job01 = document.getElementById('job01').value;
+			var bis02 = document.getElementById('bis02').value;
+			var money01 = document.getElementById('money01').value;
+			var job02 = document.getElementById('job02').value;
+			var geo03 = document.getElementById('geo03').value;
+			var adv01 = document.getElementById('adv01').value;
+			var time01 = document.getElementById('time01').value;
+			
+			console.log("var for 3rd paragraph");
+			
+			document.getElementById('output').innerHTML+= "<p>Alex started their career by performing at "+bis01+" whenever they could find time. They were working full time as a/an "+job01+" at "+bis02+" and made very little "+money01+" performing his tricks, but it made them happy. One day, a well-known "+job02+" was in the audience, and he introduced himself to Alex after the show. He told them he saw potential in them and offered them an opportunity to perform at a theatre he owned in "+geo03+". Alex "+adv01+" took the offer and prepared themselves for their show in "+time01+".</p><br>";
+			
+			console.log("3rd paragraph completed");
+			
+			
+		//4th paragraph
+			var obj01 = document.getElementById('obj01').value;
+			var cloth01 = document.getElementById('cloth01').value;
+			var furniture01 = document.getElementById('furniture01').value;
+			var obj02 = document.getElementById('obj02').value;
+			var cont01 = document.getElementById('cont01').value;
+			var liq01 = document.getElementById('liq01').value;
+			var animal02 = document.getElementById('animal02').value;
+			var geo04 = document.getElementById('geo04').value;
+			var num02 = document.getElementById('num02').value;
+			var adv02 = document.getElementById('adv02').value;
+			var verb01 = document.querySelector('input[name="verb01"]:checked').value;
+			var food01 = document.getElementById('food01').value;
+			
+			console.log("var for 4th paragraph");
+			
+			document.getElementById('output').innerHTML+= "<p>During practice, Alex came up with new tricks for the coming up show. One is where Alex places their guest’s "+obj01+" in an empty "+cloth01+" and pull out a/an "+furniture01+". Another is where they place a/an "+obj02+" into a sealed "+cont01+" full of "+liq01+" and "+animal02+" in it without opening the "+cont01+". Alex also learned to transport one or few of their guests into "+geo04+" in a matter of seconds. Alex’s show in "+geo03+" was successful. All the "+num02+" people in the audience were "+adv02+" excited and impressed by their unique tricks, and they "+verb01+" "+food01+" for the whole show.</p><br>";
+			
+			console.log("4th paragraph completed");
+			
+			
+		//5th paragraph
+			var time02 = document.getElementById('time02').value;
+			var money02 = document.getElementById('money02').value;
+			var member = document.getElementById('member').value;
+			
+			console.log("var for 5th paragraph");
+			
+			document.getElementById('output').innerHTML+= "<p>The word and story spread out, and Alex became famous on a global scale overnight. After they performed as a magician for "+time02+", Alex decided to start a business of their own. They recruited their siblings, "+sib01+", "+sib02+", and "+sib03+", and started their own entertainment studio. The studio is currently worth $"+money02+"0 and has "+member+" members registered and counting.</p><br>";
+			
+			console.log("5th paragraph completed");
+			
+			
+			
+		//6th paragraph
+			var time03 = document.getElementById('time03').value;
+			var toy01 = document.getElementById('toy01').value;
+			
+			console.log("var for 6th paragraph");
+			
+			document.getElementById('output').innerHTML+= "<p>Alex plans to retire in "+time03+" and hand the business over to their siblings. Alex is very excited to spend their time with their beloved "+toy01+" and their children.</p><br>";
+			
+			console.log("6th paragraph completed");
+			
+		
+		//if command for siblings images
+			
+			/*image swap test - 
+			insert input VALUE inside if element's ("")*/
+			
+			/*var img_sample = document.getElementById('img_sample');
+
+			if (tv01=="late night shows"){
+				img_sample.src = "images/sampleImg_lateNight.png";
+			}else{
+				img_sample.src = "images/sampleImg-01.png";
+			}
+			
+			console.log("Sample image swap - successful");*/
+			
+			
+			var img_alex = document.getElementById('images');
+			var img_sib01 = document.getElementById('images');
+			var img_sib02 = document.getElementById('images');
+			var img_sib03 = document.getElementById('images');
+		
+			
+			document.getElementById('images').innerHTML= "<img src= 'images/magician.png' alt='Alex'>";
+			console.log("Image for Alex");
+			
+			document.getElementById('images').innerHTML+= "<img src= 'images/sib01.png' alt=sib01>";
+			console.log("Image for sib 01");
+			
+			if (sib02=="Amber"){
+				document.getElementById('images').innerHTML += "<img src = 'images/sib02_amber.png' alt='Amber'>";
+			}else if (sib02=="Violet"){
+				document.getElementById('images').innerHTML += "<img src = 'images/sib02_violet.png' alt='Violet'>";
+			}else if (sib02=="Brick"){
+				document.getElementById('images').innerHTML += "<img src = 'images/sib02_brick.png' alt='Brick'>";
+			}
+			console.log("Image for sib 02");
+			
+			
+			if (sib03=="Rose"){
+				document.getElementById('images').innerHTML += "<img src = 'images/sib03_rose.png' alt='Rose'>";
+			}else if (sib03=="Lily"){
+				document.getElementById('images').innerHTML += "<img src = 'images/sib03_lily.png' alt='Lily'>";
+			}else if (sib03=="Lavender"){
+				document.getElementById('images').innerHTML += "<img src = 'images/sib03_lavender.png' alt='Lavender'>";
+			}
+			console.log("Image for sib 03");
+		
+			
+		}/*end of function myStory*/
+		
+		
+		/*for tests*/
+		function test(){
+			
+			document.getElementById('num01').value = "100";
+			document.getElementById('tv01').value = "late night shows";
+			document.querySelector('input[name="sib02"][value="Amber"]').click();
+			document.querySelector('input[name="sib03"][value="Rose"]').click();
+			document.querySelector('input[name="verb01"][value="boiled"]').click();
+			
+			myStory();
+			
+			console.log("Test button");
+		}
+	
+	</script>
+	
+</body>
+</html>
