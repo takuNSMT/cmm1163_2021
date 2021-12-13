@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Calendar Clock by Taku</title>
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Exo:wght@400&display=swap" rel="stylesheet">
+
+</head>
+
+	<style>
+		
+		body{
+			max-width: 1024px;
+			margin: auto;
+			background-repeat: no-repeat;
+		}
+		
+		#calendar{
+			width: 500px;
+			font-family: 'Exo', sans-serif;
+			font-variant: small-caps;
+			position: absolute;
+			top: 290px;
+			left: 120px;
+			opacity: 90%;
+			color: white;
+		}
+		
+		div .flexContainer{
+			display: flex;
+			position: relative;
+		}
+		
+		#time{
+			font-size: 70px;
+			font-weight: 100;
+		}
+		
+		#day{
+			opacity: 80%;
+			font-size: 40px;
+		}
+		
+		
+
+	</style>
+	
+	
+<body>
+	
+	<div id="bgImg"></div>
+	
+	<div id="calendar">
+
+		<div id = "time" class = "flexContainer">
+			
+			<div id="hour">hh</div>
+
+			<div id="min">mm</div>
+
+			<div id="sec">ss</div>
+			
+		</div>
+	
+		
+		<div class="flexContainer" id = "day">
+			
+			<div id="dayWeek">Day of the week</div>
+			
+			<div id="month">MMM</div>
+
+			<div id="date">DD</div>
+		
+			<div id="year">YYYY</div>
+			
+		</div>
+		
+	</div>
+	
+	
+	
+	<script>
+		
+		var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+		
+		/*var week = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];*/
+		
+		/*var mmm = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];*/
+		
+		var mmm = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+		
+		
+		function counter(){
+			
+			var today = new Date();
+			
+			var dwNum = today.getDay();
+			var dayWeek = week[dwNum];
+			
+			var mNum = today.getMonth();
+			var month = mmm[mNum];
+			
+			var date = today.getDate();
+			
+			var year = today.getFullYear();
+			
+			var hour = today.getHours();
+		
+			var min = today.getMinutes();
+			
+			var sec = today.getSeconds();
+			
+			
+			document.getElementById('dayWeek').innerHTML = dayWeek + "&#160;";
+
+			document.getElementById('month').innerHTML = month + "&#160;";
+
+			document.getElementById('date').innerHTML = date + ",&#160;";
+
+			document.getElementById('year').innerHTML = year;
+
+			document.getElementById('hour').innerHTML = hour + ":";
+			
+			document.getElementById('min').innerHTML = min + ":";
+			
+			document.getElementById('sec').innerHTML = sec;
+			
+		
+			console.log('counter funcion working');
+			
+			
+		
+
+			/*Adding a 0 to MIN and SEC*/
+			
+			
+			if (min<10){
+				document.getElementById('min').innerHTML = "0" + min + ":";
+			}
+			console.log('adding 0 to min');
+			
+	
+			if (sec<10){
+				document.getElementById('sec').innerHTML = "0" + sec;
+			}
+			console.log('adding 0 to sec');
+			
+			
+			
+			
+			/*Switching 24 to 12 & AM to PM*/
+			
+			
+			if (hour<12){
+				document.getElementById('sec').innerHTML += " AM";
+			}else if (hour==12){
+				document.getElementById('sec').innerHTML += " PM";
+			}else if (13<=hour){
+				document.getElementById('hour').innerHTML = hour - 12 + ":";
+				document.getElementById('sec').innerHTML += " PM";
+			}
+			
+			console.log('switching 24 to 12');
+			
+		
+		
+		
+	/***********images***********/			
+			
+			if (mNum==0){
+				document.body.style.backgroundImage = "url('images/months_01.png')";
+				console.log('Image for January');
+			
+			}else if (mNum==1){
+				document.body.style.backgroundImage = "url('images/months_02.png')";
+				console.log('Image for February');
+			
+			}else if (mNum==2){
+				document.body.style.backgroundImage = "url('images/months_03.png')";
+				console.log('Image for March');
+			
+			}else if (mNum==3){
+				document.body.style.backgroundImage = "url('images/months_04.png')";
+				console.log('Image for April');
+			
+			}else if (mNum==4){
+				document.body.style.backgroundImage = "url('images/months_05.png')";
+				console.log('Image for May');
+			
+			}else if (mNum==5){
+				document.body.style.backgroundImage = "url('images/months_06.png')";
+				calendar.style.color = "#000000";
+				console.log('Image for June');
+			
+			}else if (mNum==6){
+				document.body.style.backgroundImage = "url('images/months_07.png')";
+				console.log('Image for July');
+			
+			}else if (mNum==7){
+				document.body.style.backgroundImage = "url('images/months_08.png')";
+				console.log('Image for August');
+			
+			}else if (mNum==8){
+				document.body.style.backgroundImage = "url('images/months_09.png')";
+				console.log('Image for September');
+			
+			}else if (mNum==9){
+				document.body.style.backgroundImage = "url('images/months_10.png')";
+				console.log('Image for October');
+			
+			}else if (mNum==10){
+				document.body.style.backgroundImage = "url('images/months_11.png')";
+				console.log('Image for November');
+			
+			}else if (mNum==11){
+				document.body.style.backgroundImage = "url('images/months_12.png')";
+				console.log('Image for December');
+			}
+			
+		}
+		
+		
+		counter(); /*called at 0 second*/
+		
+		var myInt = setInterval(counter, 1000);
+		console.log('seInterval working');
+
+	
+	</script>
+	
+</body>
+</html>
