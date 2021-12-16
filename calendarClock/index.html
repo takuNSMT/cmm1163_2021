@@ -23,26 +23,60 @@
 			font-family: 'Exo', sans-serif;
 			font-variant: small-caps;
 			position: absolute;
-			top: 290px;
-			left: 120px;
-			opacity: 90%;
+			top: 300px;
+			left: 100px;
 			color: white;
 		}
 		
-		div .flexContainer{
-			display: flex;
+		
+		.time{
 			position: relative;
-		}
-		
-		#time{
+			top: 45px;
 			font-size: 70px;
-			font-weight: 100;
+			opacity: 90%;
+			line-height: 0;
 		}
 		
-		#day{
-			opacity: 80%;
-			font-size: 40px;
+		.day{
+			position: relative;
+			top: 110px;
+			opacity: 70%;
+			font-size: 39px;
+			line-height: 0;
 		}
+		
+		
+		#min{
+			position: relative;
+			left: 95px;
+		}
+		
+		#sec{
+			position: relative;
+			left: 200px;
+		}
+		
+		#ampm{
+			position: relative;
+			left: 315px;
+		}
+		
+		
+		#month{
+			position: relative;
+			left: 194px;
+		}
+		
+		#date{
+			position: relative;
+			left: 272px;
+		}
+		
+		#year{
+			position: relative;
+			left: 328px;
+		}
+		
 		
 		
 
@@ -55,28 +89,31 @@
 	
 	<div id="calendar">
 
-		<div id = "time" class = "flexContainer">
-			
+		<div class="time">
+		
 			<div id="hour">hh</div>
 
 			<div id="min">mm</div>
 
 			<div id="sec">ss</div>
-			
-		</div>
-	
+
+			<div id="ampm">am/pm</div>
 		
-		<div class="flexContainer" id = "day">
+		</div>
+		
+		
+		<div class="day">
 			
 			<div id="dayWeek">Day of the week</div>
-			
+
 			<div id="month">MMM</div>
 
 			<div id="date">DD</div>
-		
+
 			<div id="year">YYYY</div>
-			
+		
 		</div>
+		
 		
 	</div>
 	
@@ -97,6 +134,14 @@
 			
 			var today = new Date();
 			
+			var hour = today.getHours();
+		
+			var min = today.getMinutes();
+			
+			var sec = today.getSeconds();
+			
+			var ampm;
+			
 			var dwNum = today.getDay();
 			var dayWeek = week[dwNum];
 			
@@ -107,63 +152,75 @@
 			
 			var year = today.getFullYear();
 			
-			var hour = today.getHours();
-		
-			var min = today.getMinutes();
 			
-			var sec = today.getSeconds();
+			document.getElementById('hour').innerHTML = hour;
 			
+			document.getElementById('min').innerHTML = ":" + min;
 			
-			document.getElementById('dayWeek').innerHTML = dayWeek + "&#160;";
+			document.getElementById('sec').innerHTML = ":" + sec;
+			
+			document.getElementById('dayWeek').innerHTML = dayWeek;
 
-			document.getElementById('month').innerHTML = month + "&#160;";
+			document.getElementById('month').innerHTML = month;
 
-			document.getElementById('date').innerHTML = date + ",&#160;";
+			document.getElementById('date').innerHTML = date + ",";
 
 			document.getElementById('year').innerHTML = year;
 
-			document.getElementById('hour').innerHTML = hour + ":";
 			
-			document.getElementById('min').innerHTML = min + ":";
-			
-			document.getElementById('sec').innerHTML = sec;
-			
-		
 			console.log('counter funcion working');
 			
 			
-		
-
+			
+/***********Displaying time************/
+			
+			/*Switch 24 to 12,
+			Switch AM/PM
+			Add 0 to hour*/
+			
+			if (hour<=9){
+				document.getElementById('hour').innerHTML = "0" + hour;
+				document.getElementById('ampm').innerHTML = "AM";
+				
+			}else if (hour==10 || hour==11){
+				document.getElementById('ampm').innerHTML = "AM";
+				
+			}else if (hour>=13 && hour<=21){
+				document.getElementById('hour').innerHTML = "0";
+				document.getElementById('hour').innerHTML += hour - 12;
+				document.getElementById('ampm').innerHTML = "PM";
+				
+			}else{
+				document.getElementById('hour').innerHTML = hour - 12;
+				document.getElementById('ampm').innerHTML = "PM";
+				
+			}
+			
+			console.log('24 to 12, AM & PM, 0 added to hour');
+			
+			
+			
 			/*Adding a 0 to MIN and SEC*/
 			
-			
 			if (min<10){
-				document.getElementById('min').innerHTML = "0" + min + ":";
+				document.getElementById('min').innerHTML = ":" + "0" + min;
 			}
 			console.log('adding 0 to min');
 			
 	
 			if (sec<10){
-				document.getElementById('sec').innerHTML = "0" + sec;
+				document.getElementById('sec').innerHTML = ":" + "0" + sec;
 			}
 			console.log('adding 0 to sec');
 			
 			
+
+			/*Adding 0 to date*/
 			
-			
-			/*Switching 24 to 12 & AM to PM*/
-			
-			
-			if (hour<12){
-				document.getElementById('sec').innerHTML += " AM";
-			}else if (hour==12){
-				document.getElementById('sec').innerHTML += " PM";
-			}else if (13<=hour){
-				document.getElementById('hour').innerHTML = hour - 12 + ":";
-				document.getElementById('sec').innerHTML += " PM";
+			if (date<10){
+				document.getElementById('date').innerHTML = "0" + date + ",";
 			}
-			
-			console.log('switching 24 to 12');
+			console.log('adding 0 to date');
 			
 		
 		
